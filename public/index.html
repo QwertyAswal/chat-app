@@ -2,30 +2,46 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Chat App</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./img/favicon.png">
 </head>
 
 <body>
-    Chat App
+    <!-- <h1>Chat App</h1> -->
+    <div class="chat">
+        <div class="chat__sidebar"></div>
+        <div class="chat__main">
+            <div id="messages" class="chat__messages"></div>
 
-    <div id="messages"></div>
+            <div class="compose">
+                <form id="message-form">
+                    <input placeholder="Message" name="message">
+                    <button>Send</button>
+                </form>
+                <button id="send-location">Send Location</button>
+            </div>
 
-    <form id="message-form">
-        <input placeholder="Message" name="message">
-        <button>send</button>
-    </form>
-    <button id="send-location">Send Location</button>
-
+        </div>
+    </div>
 
     <script id="message-template" type="text/html">
-        <div>
-            <p>{{createdAt}} - {{message}}</p>
+        <div class="message">
+            <p>
+                <span class="message__name">Lorem Ipsum</span>
+                <span class="message_meta">{{createdAt}}</span>
+            </p>
+            <p>{{message}}</p>
         </div>
     </script>
 
     <script id="location-message-template" type="text/html">
-        <div>
-            <p>{{createdAt}} - <a href="{{url}}" target="_blank">My current location!</a></p>
+        <div class="message">
+            <p>
+                <span class="message__name">Lorem Ipsum</span>
+                <span class="message_meta">{{createdAt}}</span>
+            </p>
+            <p><a href="{{url}}" target="_blank">My current location!</a></p>
         </div>
     </script>
 
